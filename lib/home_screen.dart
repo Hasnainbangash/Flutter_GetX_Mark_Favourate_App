@@ -36,7 +36,11 @@ class _HomeScreenState extends State<HomeScreen> {
             return Card(
               child: ListTile(
                 title: Text(controller.fruitList[index].toString()),
-                trailing: Icon(Icons.favorite, color: controller.tempFruitList.contains(controller.fruitList[index].toString()) ? Colors.red : Colors.white),
+                trailing: Obx((){
+                  return Icon(Icons.favorite,
+                    color: controller.tempFruitList.contains(controller.fruitList[index].toString()) ? Colors.red : Colors.white,
+                  );
+                }),
                 onTap: (){
 
                   if (controller.tempFruitList.contains(controller.fruitList[index].toString())) {
@@ -45,9 +49,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     controller.addToFavourite(controller.fruitList[index].toString());
                   }
 
-                  setState(() {
-
-                  });
+                  // setState(() {
+                  //
+                  // });
                 },
               ),
             );
