@@ -23,6 +23,13 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: Text('GetX Tutorials'),
       ),
+      body: ListView.builder(
+          itemCount: 10,
+          itemBuilder: (context, index){
+            return ListTile(
+              title: Text(index.toString()),
+            );
+          }),
     );
   }
 }
