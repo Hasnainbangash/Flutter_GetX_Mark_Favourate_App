@@ -33,9 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
             return Card(
               child: ListTile(
                 title: Text(fruitList[index].toString()),
-                trailing: Icon(Icons.favorite, color: Colors.white),
+                trailing: Icon(Icons.favorite, color: tempFruitList.contains(fruitList[index].toString()) ? Colors.red : Colors.white),
                 onTap: (){
                   tempFruitList.add(fruitList[index].toString());
+                  setState(() {
+
+                  });
                 },
               ),
             );
