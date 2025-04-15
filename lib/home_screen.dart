@@ -10,6 +10,10 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+  List<String> fruitList = ['Orange', 'Apple', 'Mangoes', 'Banana'];
+
+  List<String> tempFruitList = [];
+
   @override
   void initState() {
     // TODO: implement initState
@@ -24,10 +28,16 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('GetX Tutorials'),
       ),
       body: ListView.builder(
-          itemCount: 10,
+          itemCount: fruitList.length,
           itemBuilder: (context, index){
-            return ListTile(
-              title: Text(index.toString()),
+            return Card(
+              child: ListTile(
+                title: Text(fruitList[index].toString()),
+                trailing: Icon(Icons.favorite, color: Colors.white),
+                onTap: (){
+                  tempFruitList.add(fruitList[index].toString());
+                },
+              ),
             );
           }),
     );
