@@ -35,7 +35,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 title: Text(fruitList[index].toString()),
                 trailing: Icon(Icons.favorite, color: tempFruitList.contains(fruitList[index].toString()) ? Colors.red : Colors.white),
                 onTap: (){
-                  tempFruitList.add(fruitList[index].toString());
+
+                  if (tempFruitList.contains(fruitList[index].toString())) {
+                    tempFruitList.remove(fruitList[index].toString());
+                  } else {
+                    tempFruitList.add(fruitList[index].toString());
+                  }
+
                   setState(() {
 
                   });
